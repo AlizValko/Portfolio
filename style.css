@@ -1,0 +1,250 @@
+html{
+    height: 100%;
+    overflow: hidden;
+    
+}
+body{
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 10% 90%;
+}
+/* neon sign */
+.neonHolderTop{
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+.neonSign{
+    grid-area: 2 / 1/ span 1 / span 1;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+h1{
+    color: rgb(255, 167, 79);
+    text-shadow: 0px 0px 5px #ffae7b, 0px 0px 10px #ffae7b, 0px 0px 20px #ffae7b, 0px 0px 40px #ffae7b;
+    font-family: ohm-medium, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*Credit to Cheong Eng Siang @ https://codepen.io/engsiang/pen/eWeNOP for helping with the following animation.*/
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    96%  { opacity:1; }
+    97%  { opacity:0; }
+    98%  { opacity:1; }
+    99%  { opacity:0; }
+}
+#neon1{
+    animation: flickerAnimation 10s infinite;
+}
+#neon2{
+    animation: flickerAnimation 10.1s infinite;
+}
+#neon3{
+    animation: flickerAnimation 10s infinite;
+}
+#neon4{
+    animation: flickerAnimation 10.12s infinite;
+}
+.neonHolderBottom{
+    grid-area: 3 / 1 / span 1 / span 1;
+}
+.neonHolderImage{
+    width: 100%;
+    height: 100%;
+}
+.wall{
+    grid-area: 1 / 2 / span 3 / span 1;
+    background-image: url("images/background5.png");
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr 3fr 1fr 3fr 1fr 2fr 1fr;
+    color: white;
+    font-family: Larabiefont, Clicker, monospace;
+}
+/* contact page */
+h3{
+    font-size: 2rem;
+    font-weight: lighter;
+}
+.content{
+    grid-row: 3 / span 4;
+    grid-column: 2 / span 3;
+}
+.content h3{
+    font-size: 2rem;
+}
+.contactme a{
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.contactme{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.contactme:hover{
+    background-color: white;
+}
+.contactme:hover a{
+    color: black;
+}
+/* projects page */
+.projects{
+    grid-row: 2 / span 5;
+    grid-column: 2 / span 3;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 450px 50px 450px 50px 450px;
+    grid-template-columns: 4fr 1fr 4fr;
+}
+.projects::-webkit-scrollbar{
+    display: none;
+}
+.image-container1{
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    position: relative;
+}
+.image-container2{
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 1;
+    position: relative;
+}
+.image-container3{
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 1;
+    position: relative;
+}
+.first-image{
+    height: 90%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+.second-image{
+    height: 90%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+}
+.third-image{
+    height: 90%;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 1;
+}
+.first-landscape{
+    height: 25%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+.second-landscape{
+    height: 25%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+}
+.third-landscape{
+    height: 25%;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 1;
+}
+.projects img:hover{
+    z-index: 5;
+    transition-duration: 1s;
+}
+.description1{
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+}
+.description2{
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+}
+.description3{
+    grid-row: 5 / span 1;
+    grid-column: 3 / span 1;
+}
+/* about page */
+.design-statement{
+    grid-row: 2 / span 5;
+    grid-column: 3 / span 2;
+    display: flex;
+}
+.design-statement h3{
+    font-size: 1.75rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.face-container img{
+    height: 70%;
+    margin: auto;
+}
+.face-container{
+    grid-row: 2 / span 5;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-items: center;
+}
+/* navigation buttons */
+.button a{
+    color: white;
+    font-family: Larabiefont, Clicker, monospace;
+    text-decoration: none;
+    font-size: 2rem;
+}
+#top{
+    grid-area: 3 / 6 / span 1 / span 1;
+}
+#bottom{
+    grid-area: 5 / 6 / span 1 / span 1;
+}
+.letter{
+    display: inline-block;
+}
+.button:hover #first{
+    transition-duration: 500ms;
+    transform: translate(0%, -10%)
+}
+.button:hover #second{
+    transition-duration: 500ms;
+    transform: translate(0%, -20%)
+}
+.button:hover #third{
+    transition-duration: 500ms;
+    transform: translate(0%, -30%)
+}
+.button:hover #fourth{
+    transition-duration: 500ms;
+    transform: translate(0%, -40%)
+}
+.button:hover #fifth{
+    transition-duration: 500ms;
+    transform: translate(0%, -50%)
+}
+.button:hover #sixth{
+    transition-duration: 500ms;
+    transform: translate(0%, -60%)
+}
+.button:hover #seventh{
+    transition-duration: 500ms;
+    transform: translate(0%, -70%)
+}
